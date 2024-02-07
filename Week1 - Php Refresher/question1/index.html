@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module Mark Calculator</title>
+  </head>
+  <body>
+    <h2>Module Mark Calculator</h2>
+    <form action="marks.php" method="post">
+      <label for="cw1">Coursework 1 Mark:</label>
+      <input
+        type="number"
+        name="cw1"
+        required
+        step="0.1"
+        min="0"
+        max="100"
+      /><br />
+
+      <label for="cw2">Coursework 2 Mark:</label>
+      <input
+        type="number"
+        name="cw2"
+        required
+        step="0.1"
+        min="0"
+        max="100"
+      /><br />
+
+      <input type="submit" value="Calculate" />
+    </form>
+  </body>
+</html>
