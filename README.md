@@ -1,0 +1,4 @@
+## THIS REPOSITORY CONTAINS THE TUTORIALS OF MODULE ADVANCED SERVER SIDE WEB PROGRAMMING
+
+- Week 1 - Php Refresher
+- week 2 - Intro to Codeigniter & MVC Architecture App
