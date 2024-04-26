@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Movie Search</title>
+	</head>
+	<body>
+		<form id="movieSearchForm">
+			<input type="text" id="query" placeholder="Enter movie title" />
+			<button type="submit">Search</button>
+		</form>
+		<div id="results"></div>
+		<!-- can put the script seperately but since this is a small tutorial I did not do that-->
+		<script>
+			document
+				.getElementById("movieSearchForm")
+				.addEventListener("submit", function (event) {
+					event.preventDefault();
+					var query = document.getElementById("query").value;
+					var apiKey =
+						"I haven't registered but normally the API key goes here";
+					var url = "http://www.omdbapi.com/?apikey=" + apiKey + "&s=" + query;
+
+					fetch(url)
+						.then((response) => response.json())
+						.then((data) => {
+							var movies = data.Search;
+							var resultsDiv = document.getElementById("results");
+							resultsDiv.innerHTML = ""; // Here I clear the previous result
+							movies.forEach((movie) => {
+								var title = movie.Title;
+								var posterUrl = movie.Poster;
+								var img = document.createElement("img");
+								img.src = posterUrl;
+								img.alt = title;
+								resultsDiv.appendChild(img);
+							});
+						})
+						.catch((error) => console.error("Error:", error));
+				});
+		</script>
+	</body>
+</html>
